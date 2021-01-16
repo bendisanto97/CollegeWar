@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-examples-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-excelant-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-ooxml-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-ooxml-schemas-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julien/Documents/IUT/2e_annee/S4/PJS4/PJS4/CollegeWar/external_jars/poi-scratchpad-4.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.beans.property.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.ImagePattern?>
+<?import javafx.scene.image.Image?>
+<?import javafx.animation.*?>
+<?import javafx.util.*?>
+
+<Pane prefWidth="1280" prefHeight="960" xmlns:fx="http://javafx.com/fxml">
+    <fx:define>
+        <Integer fx:id="APP_W" fx:value="1280" />
+        <Integer fx:id="APP_H" fx:value="960" />
+        <String fx:id="ImgPath" fx:value="file:images/background/fond_2.png" />
+        <Image fx:id="Img" url="$ImgPath" />
+        <ImagePattern fx:id="imgPat" image="$Img"/>
+    </fx:define>
+
+    <Rectangle fx:id="BG" width="$APP_W" height="$APP_H" fill="$imgPat"/>
+       
+    <ProgressBar fx:id="progressBar" translateX="350" translateY="${BG.height - 70}" prefWidth="600" progress="0"
+        style="-fx-accent: rgb(0, 0, 0)" />
+</Pane>
