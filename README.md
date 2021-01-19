@@ -15,7 +15,9 @@ The goal of the game is quite straightforward : graduate college. The most intri
 * Nostalgic effect of the student years
 * "Homemade" UX Design
 * Unique Game walkthrough Algorithm
-* Open-Source Sound and Animation
+* Open-Source Sound and Animation  
+  
+If you wish to read our report or our visual support for this project, please visit the Documents folder in this repository.
 
 ## Visuals
 ![GameOver](https://user-images.githubusercontent.com/41153756/104823490-ae4c6b00-584a-11eb-9f24-749775efddc1.png)
