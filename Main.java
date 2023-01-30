@@ -13,36 +13,30 @@ public class Main {
         int height = leavesInit[0].length;
         System.out.println(Arrays.deepToString(leavesInit));
         System.out.println(countLeaves(leavesInit, height, width));
-        int countFinal = remainingLeaves(width, height, leavesInit, "R");
+        int countFinal = remainingLeaves(width, height, leavesInit, "UDLRUU");
         System.out.println(countFinal);
     }
 
     public static int remainingLeaves(int w, int h, int[][] leaves, String winds) {
-        /*
-        if (w > 20 || h > 20 || w <= 0 || h <= 0 || winds.length() == 0) {
-
+        if (w > 20 || h > 20 || w < 0 || h < 0 || countLeaves(leaves, h, w) == 0) {
+            return 0;
         }
-        */
+
         for (int i = 0 ; i < winds.length() ; i++) {
             switch (winds.charAt(i)) {
                 case 'L':
-                    System.out.println("Moving Left");
                     leaves = moveLeft(leaves, w, h);
                     break;
                 case 'R':
-                    System.out.println("Moving Right");
                     leaves = moveRight(leaves, w, h);
                     break;
                 case 'U':
-                    System.out.println("Moving Up");
                     leaves = moveUp(leaves, w, h);
                     break;
                 case 'D':
-                    System.out.println("Moving Down");
                     leaves = moveDown(leaves, w, h);
                     break;
             }
-
         }
         return countLeaves(leaves, h, w);
     }
@@ -57,11 +51,9 @@ public class Main {
                         leaves[i][j - 1] = 1;
                         leaves[i][j] = 0;
                     }
-                    System.out.println(Arrays.deepToString(leaves));
                 }
             }
         }
-        //System.out.println(Arrays.deepToString(leaves));
         return leaves;
     }
 
@@ -83,16 +75,20 @@ public class Main {
                 }
             }
         }
-
-        System.out.println(Arrays.deepToString(leaves));
-        return leaves;
+        return convertValues(leaves);
     }
 
     public static int[][] moveUp(int [][] leaves, int width, int height) {
         for (int i = 0 ; i < width ; i++) {
             for (int j = 0 ; j < height ; j++) {
-                if (leaves[i][j] == 1)
-                    leaves[i][j-1] = leaves[i][j];
+                if (leaves[i][j] == 1) {
+                    if (i-1 < 0) {
+                        leaves[i][j] = 0;
+                    } else {
+                        leaves[i-1][j] = 1;
+                        leaves[i][j] = 0;
+                    }
+                }
             }
         }
         return leaves;
@@ -101,11 +97,22 @@ public class Main {
     public static int[][] moveDown(int [][] leaves, int width, int height) {
         for (int i = 0 ; i < width ; i++) {
             for (int j = 0 ; j < height ; j++) {
-                if (leaves[i][j+1] == 1)
-                    leaves[i][j] = leaves[i][j+1];
+                if ((i+2 < width && i+1 < width) && leaves[i][j] == 1 && leaves[i+1][j] == 1) {
+                    leaves[i+2][j] = 2;
+                    leaves[i+1][j] = 2;
+                    leaves[i][j] = 0;
+                }
+                if (leaves[i][j] == 1) {
+                    if (i+1 >= width)
+                        leaves[i][j] = 0;
+                    else {
+                        leaves[i+1][j] = 2;
+                        leaves[i][j] = 0;
+                    }
+                }
             }
         }
-        return leaves;
+        return convertValues(leaves);
     }
 
     public static int countLeaves(int[][] leaves, int h, int w) {
@@ -119,5 +126,13 @@ public class Main {
         return count;
     }
 
-
+    public static int[][] convertValues(int[][] values) {
+        for (int i = 0 ; i < values.length ; i++) {
+            for (int j = 0 ; j < values[0].length ; j++){
+                if (values[i][j] == 2)
+                    values[i][j] = 1;
+            }
+        }
+        return values;
+    }
 }
